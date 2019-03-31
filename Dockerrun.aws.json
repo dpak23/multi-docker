@@ -1,0 +1,27 @@
+{
+	"AWSEBDockerrunVersion": 2,
+	"containerDefinitions": [
+		{
+			"name": "client",
+			"image": "deepaktyagi/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+			"name": "nginx",
+			"image": "deepaktyagi/multi-nginx"
+		},
+		{
+			"name": "server",
+			"image": "deepaktyagi/multi-server",
+			"hostname": "server",
+			"essential": false
+		},
+		{
+			"name": "worker",
+			"image": "deepaktyagi/multi-worker",
+			"hostname": "worker",
+			"essential": false
+		},
+	]
+}

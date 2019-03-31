@@ -23,5 +23,18 @@ after_success:
  - docker push deepaktyagi/multi-server
  - docker push deepaktyagi/multi-worker
 
+deploy:
+ provider: elasticbeanstalk
+ region: "us-east-1"
+ app: "multi-docker"
+ env: "MultiDocker-env"
+ bucket_name: "elasticbeanstalk-us-east-1-876507037317"
+ bucket_path: "multi-docker"
+ on:
+  branch: master
+ access_key_id: $AWS_ACCESS_KEY
+ secret_access_key:
+  secure: "$AWS_SECRET_KEY"
+
 
 
